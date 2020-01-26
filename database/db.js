@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
-const exampleData = require('./sampleData.json');
 
 const { Schema } = mongoose;
 const db = mongoose.connection;
 
-mongoose.connect('mongodb://localhost/tracks');
+mongoose.connect('mongodb://localhost/songLibrary');
 
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'Connection Error:'));
 db.once('open', () => {
-  console.log('connected!');
+  console.log('Connected to database');
 });
 
 const trackSchema = new Schema({
@@ -32,16 +31,16 @@ const trackSchema = new Schema({
 
 const Track = mongoose.model('Track', trackSchema);
 
-const init = () => {
-  const data = Object.values(exampleData);
-  console.log(data[0]);
-  console.log(data.length);
-
-  for (let i = 0; i < data.length; i += 1) {
-    new Track(data[i]).save();
-  }
-};
+const readOne = (options = { id: 0 }) => new Promise((resolve, reject) => {
+  Track.find(options, (err, data) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(data);
+    }
+  });
+});
 
 module.exports = {
-  init,
+  readOne,
 };

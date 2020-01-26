@@ -7,7 +7,7 @@ const commentMaxCount = 20;
 const genreMaxCount = 3;
 const trackDurationGapCeiling = 240;
 
-const tracks = {};
+const tracks = [];
 
 // generation variables
 const titleSuffixes = ['Sick', 'Bobo', 'Kidz Bop Edition', '(dubstep remix)', '(chill hop lofi remix)', 'ft. Pitbull'];
@@ -123,7 +123,7 @@ for (let i = 0; i < trackCount; i += 1) {
 
   // populate waveform data
 
-  tracks[i] = track;
+  tracks.push(track);
 }
 
 const outputTrackData = JSON.stringify(tracks);

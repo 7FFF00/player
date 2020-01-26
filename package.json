@@ -8,7 +8,8 @@
     "test": "jest",
     "build": "webpack",
     "react-dev": "webpack --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "generate": "node sampleDataGen/dataGen.js"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.9",
     "path": "^0.12.7",

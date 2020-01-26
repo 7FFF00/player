@@ -131,8 +131,8 @@ const outputTrackData = JSON.stringify(tracks);
 // writing to file:
 fs.writeFile('database/sampleData.json', outputTrackData, (err) => {
   if (err) {
-    console.log('Error');
+    console.log('Error generating data');
   } else {
-    console.log('Success');
+    console.log('Successfully generated: "database/sampleData.json"');
   }
 });

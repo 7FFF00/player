@@ -16,6 +16,7 @@ const trackSchema = new Schema({
   artist: String,
   album: String,
   albumArt: String,
+  submittedDate: String,
   length: Number,
   waveform: [Number],
   genres: [String],

@@ -1,16 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const TrackInfo = (props) => (
-  <div>
-    TrackInfo
-    {props.artist ? props.artist : ' ARTIST '}
-    {props.title ? props.title : 'TITLE '}
-    {props.album ? props.album : 'ALBUM '}
-    {props.tags ? props.tags : 'TAGS '}
-    {props.date ? props.date : 'DATE '}
-  </div>
+const StyledBox = styled.div`
+  border: solid 1px black;
+`;
+
+const TrackInfo = (props) => {
+  const {
+    title,
+    artist,
+    album,
+    tags,
+    date,
+  } = props;
+
+  return (
+    <StyledBox>
+      TrackInfo
+      {artist}
+      {title}
+      {album}
+      {tags}
+      {date}
+    </StyledBox>
   );
+};
+
+TrackInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  artist: PropTypes.string.isRequired,
+  album: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default TrackInfo;
 

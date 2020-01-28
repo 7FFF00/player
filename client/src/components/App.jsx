@@ -11,7 +11,17 @@ class App extends React.Component {
     this.state = {
       playState: 'paused', // paused | play
       playTime: 0,
-      track: {},
+      track: {
+        id: 0,
+        title: '',
+        artist: '',
+        album: '',
+        albumArt: '',
+        submittedDate: '',
+        length: 0,
+        tags: [''],
+        comments: {},
+      },
     };
   }
 

@@ -1,6 +1,6 @@
 const path = require('path');
 
-const ENTRY_FILE = path.resolve(__dirname, 'client', 'src', 'app.jsx');
+const ENTRY_FILE = path.resolve(__dirname, 'client', 'src', 'index.jsx');
 const OUT_DIR = path.resolve(__dirname, 'client', 'dist');
 
 module.exports = {

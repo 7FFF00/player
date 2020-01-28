@@ -99,6 +99,7 @@ for (let i = 0; i < trackCount; i += 1) {
   const genreCount = Math.floor(Math.random() * genreMaxCount) + 1;
 
   track.id = i;
+  track.submittedDate = faker.date.past(3);
   track.album = randName() + randAppend();
   track.albumArt = `https://loremflickr.com/640/480/abstract?fake=${Math.floor(Math.random() * 100)}`;
   track.title = randName() + randAppend();

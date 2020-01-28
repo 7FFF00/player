@@ -19,7 +19,7 @@ const trackSchema = new Schema({
   submittedDate: String,
   length: Number,
   waveform: [Number],
-  genres: [String],
+  tags: [String],
   comments: [{
     user: {
       name: String,
@@ -37,7 +37,7 @@ const readOne = (options = { id: 0 }) => new Promise((resolve, reject) => {
     if (err) {
       reject(err);
     } else {
-      resolve(data);
+      resolve(data[0]);
     }
   });
 });

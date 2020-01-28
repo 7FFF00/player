@@ -106,7 +106,7 @@ for (let i = 0; i < trackCount; i += 1) {
   track.artist = randName(); // aka artist
   track.length = genDuration(); // in seconds
   track.waveform = genWave(); // array of 100 wave size values
-  track.genres = []; // aka tags
+  track.tags = []; // aka tags
   track.comments = [];
 
 
@@ -118,7 +118,7 @@ for (let i = 0; i < trackCount; i += 1) {
   // populate genre tags
   for (let k = 0; k < genreCount; k += 1) {
     const potentialGenres = genreOptions.slice();
-    track.genres.push(potentialGenres
+    track.tags.push(potentialGenres
       .splice(Math.floor(Math.random() * potentialGenres.length), 1)[0]);
   }
 

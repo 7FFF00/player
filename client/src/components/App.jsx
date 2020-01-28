@@ -32,7 +32,6 @@ class App extends React.Component {
 
   render() {
     const { playState, playTime, track } = this.state;
-    console.log(Array.isArray(track));
     return (
       <div>
         App

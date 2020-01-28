@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../client/src/components/App';
+import PlayInfo from '../../client/src/components/PlayInfo/PlayInfo';
 
 xdescribe('Test Suite', () => {
   it('should render without throwing an error', () => {
-    // const app = shallow(<App />);
+    // const trackInfo = shallow(<PlayInfo />);
     expect(true).toEqual(true);
   });
 });

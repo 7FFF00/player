@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../client/src/components/App';
+import TimeDisplay from '../../client/src/components/PlayInfo/TimeDisplay';
 
 xdescribe('Test Suite', () => {
   it('should render without throwing an error', () => {
-    // const app = shallow(<App />);
+    // const trackInfo = shallow(<TimeDisplay />);
     expect(true).toEqual(true);
   });
 });

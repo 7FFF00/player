@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../client/src/components/App';
+import Waveform from '../../client/src/components/PlayInfo/Waveform';
 
 xdescribe('Test Suite', () => {
   it('should render without throwing an error', () => {
-    // const app = shallow(<App />);
+    // const trackInfo = shallow(<Waveform />);
     expect(true).toEqual(true);
   });
 });

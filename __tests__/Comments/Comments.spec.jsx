@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../client/src/components/App';
+import Comments from '../../client/src/components/Comments/Comments';
 
 xdescribe('Test Suite', () => {
   it('should render without throwing an error', () => {
-    // const app = shallow(<App />);
+    // const trackInfo = shallow(<Comments />);
     expect(true).toEqual(true);
   });
 });

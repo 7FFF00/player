@@ -1,73 +1,75 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './styles';
 import timeSince from './timeSince';
-
-const {
+import {
   StyledDiv,
-  RightDiv,
+  StyledRightDiv,
   StyledArtist,
   StyledTitle,
   StyledPlaylist,
   StyledTags,
   StyledDate,
-} = styles;
+} from './styles';
 
-const TrackInfo = (props) => {
-  const {
-    title,
-    artist,
-    playlist,
-    tags,
-    date,
-  } = props;
-
-  return (
-    <StyledDiv>
-      <div>
-        <StyledArtist as="a" href="/">{artist}</StyledArtist>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledPlaylist as="a" href="/">
-          {
-            playlist.length > 0
-              ? (
-                <span>
-                  In playlist:
-                  <span> </span>
-                  {playlist}
-                </span>
-              )
-              : null
-          }
-        </StyledPlaylist>
-      </div>
-      <RightDiv>
-        <StyledDate>{timeSince(date)}</StyledDate>
-        <StyledTags as="a" href="/">
-          {tags.length > 0 ? (<span># </span>) : null}
-          {
-            tags.map((tag, index) => (tags.length > 1 && index !== tags.length - 1
-              ? (
-                <span>
-                  {tag}
-                  /
-                </span>
-              )
-              : (<span>{tag}</span>)
-            ))
-          }
-        </StyledTags>
-      </RightDiv>
-    </StyledDiv>
-  );
-};
+const TrackInfo = ({
+  title,
+  artist,
+  playlist,
+  tags,
+  date,
+}) => (
+  <StyledDiv>
+    <div>
+      <StyledArtist as="a" href="/">{artist}</StyledArtist>
+      <StyledTitle>{title}</StyledTitle>
+      {
+        playlist.length > 0
+          ? (
+            <StyledPlaylist as="a" href="/">
+              <span>
+                In playlist:
+                <span> </span>
+                {playlist}
+              </span>
+            </StyledPlaylist>
+          )
+          : null
+      }
+    </div>
+    <StyledRightDiv>
+      <StyledDate>{timeSince(date)}</StyledDate>
+      <StyledTags as="a" href="/">
+        {tags.length > 0 ? (<span># </span>) : null}
+        {
+          tags.map((tag, index) => (tags.length > 1 && index !== tags.length - 1
+            ? (
+              <span key={`${tag}Key`}>
+                {tag}
+                /
+              </span>
+            )
+            : (<span key={`${tag}Key`}>{tag}</span>)
+          ))
+        }
+      </StyledTags>
+    </StyledRightDiv>
+  </StyledDiv>
+);
 
 TrackInfo.propTypes = {
-  title: PropTypes.string.isRequired,
-  artist: PropTypes.string.isRequired,
-  playlist: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  date: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  artist: PropTypes.string,
+  playlist: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  date: PropTypes.string,
+};
+
+TrackInfo.defaultProps = {
+  title: '',
+  artist: '',
+  playlist: '',
+  tags: [],
+  date: new Date().toISOString(),
 };
 
 export default TrackInfo;

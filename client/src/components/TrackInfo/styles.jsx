@@ -1,76 +1,73 @@
 import styled from 'styled-components';
 
-const styles = {
-  StyledDiv: styled.div`
-    font-family: Arial;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-  `,
+export const StyledDiv = styled.div`
+  background-color: #A0A0C0;
+  font-family: Arial;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+`;
 
-  RightDiv: styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  `,
+export const StyledRightDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
 
-  StyledArtist: styled.div`
-    width: max-content;
-    margin: 3px;
-    padding: 3px 8px 3px 8px;
-    background-color: #202020;
-    color: #C5C5C5;
-    text-decoration: none;
+export const StyledArtist = styled.div`
+  width: max-content;
+  margin: 3px;
+  padding: 3px 8px 3px 8px;
+  background-color: #202020;
+  color: #C5C5C5;
+  text-decoration: none;
 
-    :hover {
-      color: #F9F9F9;
-      cursor: pointer;
-    }
-  `,
-
-  StyledTitle: styled.div`
-    width: max-content;
-    margin: 6px 3px 6px 3px;
-    padding: 8px;
-    background-color: #202020;
+  :hover {
     color: #F9F9F9;
-    font-size: 24px;
-  `,
+    cursor: pointer;
+  }
+`;
 
-  StyledPlaylist: styled.div`
-    width: max-content;
-    margin: 3px;
-    padding: 3px 8px 3px 8px;
-    background-color: #202020;
-    color: #C5C5C5;
-    text-decoration: none;
+export const StyledTitle = styled.div`
+  width: max-content;
+  margin: 6px 3px 6px 3px;
+  padding: 8px;
+  background-color: #202020;
+  color: #F9F9F9;
+  font-size: 24px;
+`;
 
-    :hover {
-      color: #F9F9F9;
-      cursor: pointer;
-    }
-  `,
+export const StyledPlaylist = styled.div`
+  width: max-content;
+  margin: 3px;
+  padding: 3px 8px 3px 8px;
+  background-color: #202020;
+  color: #C5C5C5;
+  text-decoration: none;
 
-  StyledTags: styled.div`
-    width: max-content;
-    padding: 2px 8px 2px 8px;
-    background-color: #909095;
+  :hover {
     color: #F9F9F9;
-    border-radius: 30px;
-    text-decoration: none;
-    position: relative;
-    top: 10%;
+    cursor: pointer;
+  }
+`;
 
-    :hover {
-      background-color: #505055;
-      cursor: pointer;
-    }
-  `,
+export const StyledTags = styled.div`
+  width: max-content;
+  padding: 2px 8px 2px 8px;
+  background-color: #909095;
+  color: #F9F9F9;
+  border-radius: 30px;
+  text-decoration: none;
+  position: relative;
+  top: 10%;
 
-  StyledDate: styled.div`
-    padding: 3px;
-    color: #F9F9F9;
-  `,
-};
+  :hover {
+    background-color: #505055;
+    cursor: pointer;
+  }
+`;
 
-export default styles;
+export const StyledDate = styled.div`
+  padding: 3px;
+  color: #F9F9F9;
+`;

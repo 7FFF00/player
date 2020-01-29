@@ -9,8 +9,8 @@ const ms = {
   milliseconds: 1,
 };
 
-const timeSince = (dateTimeString) => {
-  const currDate = new Date();
+const timeSince = (dateTimeString, currentDateString = new Date().toISOString()) => {
+  const currDate = new Date(currentDateString);
   const prevDate = new Date(dateTimeString);
   const deltaTime = currDate.getTime() - prevDate.getTime();
 
@@ -35,3 +35,4 @@ const timeSince = (dateTimeString) => {
 };
 
 export default timeSince;
+

@@ -3,7 +3,6 @@ import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
 import AlbumArt from './AlbumArt/AlbumArt';
 import PlayInfo from './PlayInfo/PlayInfo';
-import Comments from './Comments/Comments';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,17 +10,7 @@ class App extends React.Component {
     this.state = {
       playState: 'paused', // paused | play
       playTime: 0,
-      track: {
-        id: 0,
-        title: '',
-        artist: '',
-        album: '',
-        albumArt: '',
-        submittedDate: '',
-        length: 0,
-        tags: [''],
-        comments: [],
-      },
+      track: {},
     };
   }
 
@@ -33,7 +22,7 @@ class App extends React.Component {
     // retrieve song information populating state
     // passing down state via props to children components
     // as needed
-    fetch('/api/songs/0')
+    fetch('/api/songs/1')
       .then((response) => response.json())
       .then((trackObject) => this.setState(() => ({
         track: trackObject,
@@ -49,13 +38,17 @@ class App extends React.Component {
         <TrackInfo
           title={track.title}
           artist={track.artist}
-          album={track.album}
+          playlist={track.playlist}
           tags={track.tags}
           date={track.submittedDate}
         />
         <AlbumArt art={track.AlbumArt} />
-        <PlayInfo waveform={track.waveform} playTime={playTime} duration={track.length} />
-        <Comments comments={track.comments} />
+        <PlayInfo
+          waveform={track.waveform}
+          playTime={playTime}
+          duration={track.length}
+          comments={track.comments}
+        />
       </div>
     );
   }

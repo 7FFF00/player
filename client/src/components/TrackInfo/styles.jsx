@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-  background-color: #A0A0C0;
   font-family: Arial;
   font-size: 16px;
   display: flex;

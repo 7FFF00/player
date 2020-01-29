@@ -20,7 +20,7 @@ class App extends React.Component {
         submittedDate: '',
         length: 0,
         tags: [''],
-        comments: {},
+        comments: [],
       },
     };
   }

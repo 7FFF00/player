@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-  font-family: Arial;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
   font-size: 16px;
   display: flex;
   justify-content: space-between;

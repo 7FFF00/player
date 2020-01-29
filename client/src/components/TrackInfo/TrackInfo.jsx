@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 
 const StyledBox = styled.div`
   border: solid 1px black;
+  display: flex;
+  flex-direction: space-between;
 `;
 
 const TrackInfo = (props) => {
   const {
     title,
     artist,
-    album,
+    playlist,
     tags,
     date,
   } = props;
@@ -20,7 +22,7 @@ const TrackInfo = (props) => {
       TrackInfo
       {artist}
       {title}
-      {album}
+      {playlist}
       {tags}
       {date}
     </StyledBox>

@@ -14,7 +14,7 @@ const trackSchema = new Schema({
   id: Number,
   title: String,
   artist: String,
-  album: String,
+  playlist: String,
   albumArt: String,
   submittedDate: String,
   length: Number,

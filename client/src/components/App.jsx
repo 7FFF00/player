@@ -3,7 +3,6 @@ import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
 import AlbumArt from './AlbumArt/AlbumArt';
 import PlayInfo from './PlayInfo/PlayInfo';
-import Comments from './Comments/Comments';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class App extends React.Component {
         id: 0,
         title: '',
         artist: '',
-        album: '',
+        playlist: '',
         albumArt: '',
         submittedDate: '',
         length: 0,
@@ -49,13 +48,17 @@ class App extends React.Component {
         <TrackInfo
           title={track.title}
           artist={track.artist}
-          album={track.album}
+          playlist={track.playlist}
           tags={track.tags}
           date={track.submittedDate}
         />
         <AlbumArt art={track.AlbumArt} />
-        <PlayInfo waveform={track.waveform} playTime={playTime} duration={track.length} />
-        <Comments comments={track.comments} />
+        <PlayInfo
+          waveform={track.waveform}
+          playTime={playTime}
+          duration={track.length}
+          comments={track.comments}
+        />
       </div>
     );
   }

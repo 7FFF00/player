@@ -26,8 +26,12 @@ const timeSince = (dateTimeString) => {
     deltaTimeFrame = 'years';
   }
 
-  return `${Math.floor(deltaTime / ms[deltaTimeFrame])} ${deltaTimeFrame} ago`;
+  const deltaTimeFormatted = Math.floor(deltaTime / ms[deltaTimeFrame]);
+  const deltaTimeFrameFormatted = deltaTimeFormatted > 1
+    ? deltaTimeFrame
+    : deltaTimeFrame.substr(0, deltaTimeFrame.length - 1);
+
+  return `${deltaTimeFormatted} ${deltaTimeFrameFormatted} ago`;
 };
 
 export default timeSince;
-

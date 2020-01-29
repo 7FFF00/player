@@ -17,9 +17,10 @@ const styles = {
   StyledArtist: styled.div`
     width: max-content;
     margin: 3px;
-    padding: 3px;
+    padding: 3px 8px 3px 8px;
     background-color: #202020;
-    color: #C0C0C0;
+    color: #C5C5C5;
+    text-decoration: none;
 
     :hover {
       color: #F9F9F9;
@@ -29,7 +30,7 @@ const styles = {
 
   StyledTitle: styled.div`
     width: max-content;
-    margin: 3px;
+    margin: 6px 3px 6px 3px;
     padding: 8px;
     background-color: #202020;
     color: #F9F9F9;
@@ -39,9 +40,15 @@ const styles = {
   StyledPlaylist: styled.div`
     width: max-content;
     margin: 3px;
-    padding: 3px;
+    padding: 3px 8px 3px 8px;
     background-color: #202020;
-    color: #F9F9F9;
+    color: #C5C5C5;
+    text-decoration: none;
+
+    :hover {
+      color: #F9F9F9;
+      cursor: pointer;
+    }
   `,
 
   StyledTags: styled.div`
@@ -50,6 +57,9 @@ const styles = {
     background-color: #909095;
     color: #F9F9F9;
     border-radius: 30px;
+    text-decoration: none;
+    position: relative;
+    top: 10%;
 
     :hover {
       background-color: #505055;

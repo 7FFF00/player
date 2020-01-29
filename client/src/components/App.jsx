@@ -16,9 +16,9 @@ class App extends React.Component {
         artist: '',
         playlist: '',
         albumArt: '',
-        submittedDate: '',
+        submittedDate: new Date().toISOString(),
         length: 0,
-        tags: [''],
+        tags: [],
         comments: [],
       },
     };
@@ -32,7 +32,7 @@ class App extends React.Component {
     // retrieve song information populating state
     // passing down state via props to children components
     // as needed
-    fetch('/api/songs/0')
+    fetch('/api/songs/1')
       .then((response) => response.json())
       .then((trackObject) => this.setState(() => ({
         track: trackObject,

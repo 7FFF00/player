@@ -48,7 +48,9 @@
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.9",
     "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.0"
   }
 }

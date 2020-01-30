@@ -13,17 +13,14 @@ export const StyledImage = styled.img`
 
 export const ModalBackdrop = styled.div`
   display: block;
-  transition: opacity .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
   position: absolute;
-  background-color: #E5E5E5;
+  background-color: rgba(220, 220, 220, ${(props) => props.show ? '.7' : '0'});
   top: 0;
   left: 0;
   width: 100%;
   height: ${(props) => props.fade ? '100%' : '0'};
-  opacity: ${(props) => props.show ? '.7' : '0'};
 `;
 
-export const ModalBox = styled.img`
-  width: 500px;
-  height: 500px;
+export const ModalBox = styled.div`
 `;

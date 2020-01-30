@@ -34,6 +34,8 @@ class AlbumArt extends React.Component {
           <StyledImage src={artUrl} alt={text} />
         </StyledBox>
         <AlbumModal
+          artUrl={artUrl}
+          artText={text}
           display={displayModal}
           title={title}
           renderModal={renderModal}

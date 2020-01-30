@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
+export const StyledDiv = styled.div`
+  margin: 20px;
+`;
+
 export const StyledBox = styled.div`
+  outline: 1px solid rgba(100, 100, 100, .4);
+  outline-offset: -1px;
   width: 340px;
   height: 340px;
 `;

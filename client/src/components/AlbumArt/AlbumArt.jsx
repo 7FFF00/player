@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AlbumModal from './AlbumModal';
-import { StyledBox, StyledImage } from './albumStyles';
+import { StyledDiv, StyledBox, StyledImage } from './albumStyles';
 
 class AlbumArt extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class AlbumArt extends React.Component {
     const { album: { artUrl, text }, title } = this.props;
     const { displayModal, renderModal } = this.state;
     return (
-      <div>
+      <StyledDiv>
         <StyledBox onClick={() => this.toggleModal()}>
           <StyledImage src={artUrl} alt={text} />
         </StyledBox>
@@ -41,7 +41,7 @@ class AlbumArt extends React.Component {
           renderModal={renderModal}
           toggleModal={() => this.toggleModal()}
         />
-      </div>
+      </StyledDiv>
     );
   }
 }

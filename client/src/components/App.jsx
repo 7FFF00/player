@@ -1,15 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
 import AlbumArt from './AlbumArt/AlbumArt';
 import PlayInfo from './PlayInfo/PlayInfo';
-
-const StyledDiv = styled.div`
-  background-color: #A0A0C0;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
-  font-size: 16px;
-`;
+import { StyledDiv, VerticalDiv, HorizontalDiv } from './appStyles';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,22 +34,25 @@ class App extends React.Component {
     const { playState, playTime, track } = this.state;
     return (
       <StyledDiv>
-        App
-        <PlayButton playState={playState} />
-        <TrackInfo
-          title={track.title}
-          artist={track.artist}
-          playlist={track.playlist}
-          tags={track.tags}
-          date={track.submittedDate}
-        />
+        <VerticalDiv>
+          <HorizontalDiv>
+            <PlayButton playState={playState} />
+            <TrackInfo
+              title={track.title}
+              artist={track.artist}
+              playlist={track.playlist}
+              tags={track.tags}
+              date={track.submittedDate}
+            />
+          </HorizontalDiv>
+          <PlayInfo
+            waveform={track.waveform}
+            playTime={playTime}
+            duration={track.length}
+            comments={track.comments}
+          />
+        </VerticalDiv>
         <AlbumArt album={track.album} trackTitle={track.title} />
-        <PlayInfo
-          waveform={track.waveform}
-          playTime={playTime}
-          duration={track.length}
-          comments={track.comments}
-        />
       </StyledDiv>
     );
   }

@@ -102,11 +102,12 @@ for (let i = 0; i < trackCount; i += 1) {
   track.submittedDate = faker.date.past(3);
   track.playlist = {
     name: randName() + randAppend(),
-    art: `https://loremflickr.com/640/480/abstract?fake=${Math.floor(Math.random() * 100)}`,
+    artUrl: `https://loremflickr.com/640/480/abstract?fake=${Math.floor(Math.random() * 100)}`,
   };
-  track.album = {};
-  track.album.artUrl = `https://loremflickr.com/640/480/abstract?fake=${Math.floor(Math.random() * 100)}`;
-  track.album.text = faker.company.catchPhraseDescriptor();
+  track.album = {
+    artUrl: `https://loremflickr.com/640/480/abstract?fake=${Math.floor(Math.random() * 100)}`,
+    text: faker.company.catchPhraseDescriptor(),
+  };
   track.title = randName() + randAppend();
   track.artist = randName(); // aka artist
   track.length = genDuration(); // in seconds

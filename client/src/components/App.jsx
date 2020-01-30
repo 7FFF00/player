@@ -49,7 +49,7 @@ class App extends React.Component {
           tags={track.tags}
           date={track.submittedDate}
         />
-        <AlbumArt artUrl={track.AlbumArt} title={track.title} />
+        <AlbumArt album={track.album} trackTitle={track.title} />
         <PlayInfo
           waveform={track.waveform}
           playTime={playTime}

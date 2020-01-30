@@ -3,6 +3,7 @@ import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
 import AlbumArt from './AlbumArt/AlbumArt';
 import PlayInfo from './PlayInfo/PlayInfo';
+import { StyledDiv, VerticalDiv, HorizontalDiv } from './appStyles';
 
 class App extends React.Component {
   constructor(props) {
@@ -32,24 +33,27 @@ class App extends React.Component {
   render() {
     const { playState, playTime, track } = this.state;
     return (
-      <div>
-        App
-        <PlayButton playState={playState} />
-        <TrackInfo
-          title={track.title}
-          artist={track.artist}
-          playlist={track.playlist}
-          tags={track.tags}
-          date={track.submittedDate}
-        />
-        <AlbumArt art={track.AlbumArt} />
-        <PlayInfo
-          waveform={track.waveform}
-          playTime={playTime}
-          duration={track.length}
-          comments={track.comments}
-        />
-      </div>
+      <StyledDiv>
+        <VerticalDiv>
+          <HorizontalDiv>
+            <PlayButton playState={playState} />
+            <TrackInfo
+              title={track.title}
+              artist={track.artist}
+              playlist={track.playlist}
+              tags={track.tags}
+              date={track.submittedDate}
+            />
+          </HorizontalDiv>
+          <PlayInfo
+            waveform={track.waveform}
+            playTime={playTime}
+            duration={track.length}
+            comments={track.comments}
+          />
+        </VerticalDiv>
+        <AlbumArt album={track.album} trackTitle={track.title} />
+      </StyledDiv>
     );
   }
 }

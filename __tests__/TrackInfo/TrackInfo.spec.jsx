@@ -6,7 +6,7 @@ import {
   StyledTitle,
   StyledPlaylist,
   StyledTags,
-} from '../../client/src/components/TrackInfo/styles';
+} from '../../client/src/components/TrackInfo/trackInfoStyles';
 
 describe('Track Info', () => {
   it('should render without throwing an error', () => {
@@ -31,7 +31,14 @@ describe('Track Info', () => {
 
   it('should dynamically render passed in props', () => {
     const defaultedProps = shallow(<TrackInfo />);
-    const smallProps = shallow(<TrackInfo title="Big Fish" tags={['beep']} playlist="Chillhop Lofi Beats" />);
+    const smallProps = shallow(<TrackInfo
+      title="Big Fish"
+      tags={['beep']}
+      playlist={{
+        name: 'coldmoo',
+        artUrl: 'dotcom',
+      }}
+    />);
     const largeProps = shallow(<TrackInfo tags={['dubstep', 'remix', 'chillhop', 'lofi']} />);
 
     expect(defaultedProps.find(StyledTags).dive().find('span')).toHaveLength(0);

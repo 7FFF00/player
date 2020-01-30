@@ -14,8 +14,14 @@ const trackSchema = new Schema({
   id: Number,
   title: String,
   artist: String,
-  playlist: String,
-  albumArt: String,
+  playlist: {
+    name: String,
+    artUrl: String,
+  },
+  album: {
+    artUrl: String,
+    text: String,
+  },
   submittedDate: String,
   length: Number,
   waveform: [Number],

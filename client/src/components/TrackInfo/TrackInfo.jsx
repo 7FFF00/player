@@ -9,7 +9,7 @@ import {
   StyledPlaylist,
   StyledTags,
   StyledDate,
-} from './styles';
+} from './trackInfoStyles';
 
 const TrackInfo = ({
   title,
@@ -23,13 +23,13 @@ const TrackInfo = ({
       <StyledArtist as="a" href="/">{artist}</StyledArtist>
       <StyledTitle>{title}</StyledTitle>
       {
-        playlist.length > 0
+        playlist.name.length > 0
           ? (
             <StyledPlaylist as="a" href="/">
               <span>
                 In playlist:
                 <span> </span>
-                {playlist}
+                {playlist.name}
               </span>
             </StyledPlaylist>
           )
@@ -59,7 +59,7 @@ const TrackInfo = ({
 TrackInfo.propTypes = {
   title: PropTypes.string,
   artist: PropTypes.string,
-  playlist: PropTypes.string,
+  playlist: PropTypes.objectOf(PropTypes.string),
   tags: PropTypes.arrayOf(PropTypes.string),
   date: PropTypes.string,
 };
@@ -67,7 +67,10 @@ TrackInfo.propTypes = {
 TrackInfo.defaultProps = {
   title: '',
   artist: '',
-  playlist: '',
+  playlist: {
+    name: '',
+    artUrl: '',
+  },
   tags: [],
   date: new Date().toISOString(),
 };

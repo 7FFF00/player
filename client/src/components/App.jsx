@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playState: 'paused', // paused | play
+      playing: false,
       playTime: 0,
       track: {},
     };
@@ -30,13 +30,17 @@ class App extends React.Component {
       })));
   }
 
+  togglePlay() {
+    this.setState((state) => ({ playing: !state.playing }));
+  }
+
   render() {
-    const { playState, playTime, track } = this.state;
+    const { playing, playTime, track } = this.state;
     return (
       <StyledDiv>
         <VerticalDiv>
           <HorizontalDiv>
-            <PlayButton playState={playState} />
+            <PlayButton playing={playing} togglePlay={() => this.togglePlay()}/>
             <TrackInfo
               title={track.title}
               artist={track.artist}

@@ -4,5 +4,23 @@ jobs:
     docker:
       - image: circleci/node:10.15.3
     steps:
-      - run: "npm install"
-      - run: "npm test"
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+
+      # Download, cache depdencies, using fallback to latest if none found
+      - restore_cache: 
+          keys: 
+            - v1-playerApp-{{ checksum "package.json" }}
+            - v1-playerApp-
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-playerApp-{{ checksum "package.json" }}
+      - run:
+          name: test
+          command: npm test

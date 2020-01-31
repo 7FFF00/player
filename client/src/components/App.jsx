@@ -31,7 +31,6 @@ class App extends React.Component {
   }
 
   togglePlay() {
-    console.log('Toggling Play to:', this.state.playing);
     this.setState((state) => ({ playing: !state.playing }));
   }
 

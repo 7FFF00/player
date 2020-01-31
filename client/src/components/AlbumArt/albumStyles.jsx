@@ -19,13 +19,14 @@ export const StyledImage = styled.img`
 
 export const ModalBackdrop = styled.div`
   display: block;
+  visibility: ${(props) => props.fade ? 'visible' : 'hidden'};
   transition: background-color .3s ease-in-out;
   position: absolute;
-  background-color: rgba(220, 220, 220, ${(props) => props.show ? '.7' : '0'});
+  background-color: rgba(220,220,220,${(props) => props.show ? '0.7' : '0'});
   top: 0;
   left: 0;
   width: 100%;
-  height: ${(props) => props.fade ? '100%' : '0'};
+  height: 100%;
 `;
 
 export const ModalBox = styled.div`

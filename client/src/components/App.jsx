@@ -1,4 +1,5 @@
 import React from 'react';
+import Sound from 'react-sound';
 import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
 import AlbumArt from './AlbumArt/AlbumArt';
@@ -40,7 +41,7 @@ class App extends React.Component {
       <StyledDiv>
         <VerticalDiv>
           <HorizontalDiv>
-            <PlayButton playing={playing} togglePlay={() => this.togglePlay()}/>
+            <PlayButton playing={playing} togglePlay={() => this.togglePlay()} />
             <TrackInfo
               title={track.title}
               artist={track.artist}
@@ -57,6 +58,10 @@ class App extends React.Component {
           />
         </VerticalDiv>
         <AlbumArt album={track.album} trackTitle={track.title} />
+        <Sound
+          url="assets/royaltyFreeFunk.mp3"
+          playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
+        />
       </StyledDiv>
     );
   }

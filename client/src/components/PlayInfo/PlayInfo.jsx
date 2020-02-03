@@ -13,7 +13,7 @@ const PlayInfo = ({
 }) => (
   <RelativeDiv>
     <OverlappingDiv>
-      <Waveform waveform={waveform} />
+      <Waveform waveform={waveform} playTime={playTime} duration={duration} />
     </OverlappingDiv>
     <OverlappingDiv>
       <TimeDisplay playTime={playTime} duration={duration} />

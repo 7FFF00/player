@@ -32,3 +32,26 @@ export const StyledCanvas = styled.canvas`
     opacity: 1;
   }
 `;
+
+export const SplitContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CurrentPlayTime = styled.div`
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 10px;
+  background-color: #202020;
+  color: #FF5500;
+`;
+
+
+export const Duration = styled.div`
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 10px;
+  background-color: #202020;
+  color: #C9C9C9;
+`;

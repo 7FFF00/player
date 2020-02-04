@@ -27,13 +27,3 @@ Comments.defaultProps = {
 };
 
 export default Comments;
-
-
-  // comments: [{
-  //   user: {
-  //     name: String,
-  //     avatarUrl: String,
-  //   },
-  //   body: String,
-  //   timestamp: String,
-  // }],

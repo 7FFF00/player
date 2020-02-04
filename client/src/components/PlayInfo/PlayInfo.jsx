@@ -19,7 +19,7 @@ const PlayInfo = ({
       <TimeDisplay playTime={playTime} duration={duration} />
     </OverlappingDiv>
     <CommentsContainer>
-      <Comments comments={comments} />
+      <Comments comments={comments} duration={duration} />
     </CommentsContainer>
   </RelativeDiv>
 );
@@ -28,7 +28,11 @@ PlayInfo.propTypes = {
   waveform: PropTypes.arrayOf(PropTypes.number),
   playTime: PropTypes.number,
   duration: PropTypes.number,
-  comments: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  comments: PropTypes.arrayOf(PropTypes.shape({
+    user: PropTypes.objectOf(PropTypes.string),
+    body: PropTypes.string,
+    timestamp: PropTypes.string,
+  })),
 };
 
 PlayInfo.defaultProps = {

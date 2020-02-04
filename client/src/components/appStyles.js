@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-  background-color: #A0A0C0;
+  background-image: linear-gradient(${Math.floor(Math.random() * 360)}deg, #8080A0, #807080);
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
   font-size: 16px;
   min-width: 1000px;

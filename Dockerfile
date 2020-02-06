@@ -5,6 +5,5 @@ COPY . /src/app
 RUN npm install -P
 RUN apk add mongodb mongodb-tools
 RUN npm run build-production
-RUN npm run seed
 EXPOSE 3002
 CMD [ "npm", "start" ]

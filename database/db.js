@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const db = mongoose.connection;
 
-mongoose.connect('mongodb://dockerized-player_database_1/songLibrary');
+mongoose.connect('mongodb://database/songLibrary');
 
 db.on('error', console.error.bind(console, 'Connection Error:'));
 db.once('open', () => {

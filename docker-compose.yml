@@ -7,6 +7,5 @@ services:
       - 'database'
     ports: 
       - '3002:3002'
-
   database:
     image: mongo:latest

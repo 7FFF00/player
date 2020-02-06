@@ -7,9 +7,10 @@
     "start": "node server/index.js",
     "test": "jest --coverage --colors",
     "build": "webpack",
+    "build-production": "webpack -P",
     "react-dev": "webpack --watch",
     "server-dev": "nodemon server/index.js",
-    "seed": "node sampleDataGen/dataGen.js && mongo songLibrary --eval 'db.tracks.drop()' && mongoimport --jsonArray --db songLibrary --collection tracks --file database/sampleData.json"
+    "seed": "node sampleDataGen/dataGen.js && mongo --host \"dockerized-player_database_1\" songLibrary --eval 'db.tracks.drop()' && mongoimport --uri \"mongodb://dockerized-player_database_1/songLibrary\" --jsonArray --collection tracks --file database/sampleData.json"
   },
   "repository": {
     "type": "git",

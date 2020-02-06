@@ -24,7 +24,7 @@ class App extends React.Component {
     // retrieve song information populating state
     // passing down state via props to children components
     // as needed
-    fetch('http://localhost:3002/api/songs/1', {
+    fetch('/api/songs/1', {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',

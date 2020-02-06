@@ -15,6 +15,11 @@ app.listen(port, () => {
   console.log('Server listening on port', port);
 });
 
+app.get('/', (req, res, next) => {
+  console.log(`${req.method} on ${req.url}, with params of ${req.params}`);
+  next();
+});
+
 app.get('/api/songs/:songId', (req, res) => db.readOne({ id: req.params.songId })
   .then((songData) => res.status(200).send(songData))
   .catch((err) => res.status(400).send(err)));

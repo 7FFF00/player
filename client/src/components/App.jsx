@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Sound from 'react-sound';
 import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
@@ -21,10 +22,11 @@ class App extends React.Component {
   }
 
   update() {
+    const { songId } = this.props;
     // retrieve song information populating state
     // passing down state via props to children components
     // as needed
-    fetch('/api/songs/1', {
+    fetch(`/api/player/songs/${songId}`, {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
@@ -71,5 +73,13 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  songId: PropTypes.number,
+};
+
+App.defaultProps = {
+  songId: 0,
+};
 
 export default App;

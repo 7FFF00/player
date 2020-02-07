@@ -2,4 +2,5 @@
 
 Player module for the BoboBeats web app
 
-run 'npm run seed' from within container
+seed with the following command:
+[docker exec -it player_player_1 sh -c "npm run seed"]

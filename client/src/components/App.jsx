@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Sound from 'react-sound';
 import PlayButton from './PlayButton/PlayButton';
 import TrackInfo from './TrackInfo/TrackInfo';
 import AlbumArt from './AlbumArt/AlbumArt';
@@ -65,10 +64,6 @@ class App extends React.Component {
           />
         </VerticalDiv>
         <AlbumArt album={track.album} trackTitle={track.title} />
-        <Sound
-          url="assets/royaltyFreeFunk.mp3"
-          playStatus={playing ? Sound.status.PLAYING : Sound.status.PAUSED}
-        />
       </StyledDiv>
     );
   }
